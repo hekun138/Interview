@@ -19,3 +19,18 @@ event.nativeEvent.currentTarget 指向document
 2. event.nativeEvent是原生事件对象
 3. 所有的事件，都被挂载到document上
 4. 和DOM事件不一样，和Vue事件也不一样
+
+##### setState
+* 不可变值
+1. 不要直接修改state,使用不可变数据
+ `this.state.count++` 错误
+ ```
+ this.setState({
+    count: this.state.count + 1
+  })
+  ```
+* 可能是异步更新
+ ```
+ 
+* 可能会被合并
+
