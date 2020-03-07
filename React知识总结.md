@@ -101,4 +101,7 @@ this.setState((prevState, props) => {
 })
 ```
 ##### React组件生命周期
+[![](https://image.prntscr.com/image/2UaUnNvWR6ut4VFyXdXkdQ.png)](https://image.prntscr.com/image/2UaUnNvWR6ut4VFyXdXkdQ.png "markdown")
+[![](https://image.prntscr.com/image/weCxqslTQtWX6tNugFGcFQ.png)](https://image.prntscr.com/image/weCxqslTQtWX6tNugFGcFQ.png "markdown")
 
+http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
