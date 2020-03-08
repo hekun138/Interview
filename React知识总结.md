@@ -153,5 +153,54 @@ render(){
 }
 ```
 * 性能优化
+  - 前言
+  - React默认：父组件有更新，子组件则无条件也更新
+  - 性能优化对于React更加重要
+  - SCU 一定要每次都用吗？需要的时候才优化
+    - SCU默认返回true,即React默认重新渲染所有子组件
+    - 必须配合"不可变值"一起使用
+    - 可先不用SCU，有性能问题时再考虑使用
+  - shouldComponentUpdate (简称SCU)
+  ```
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextState.count !== this.state.count) {
+      return true //可以渲染
+    }
+    return false //不重复渲染
+  }
+  ```
+ - PureComponent和React.memo
+   - PureComponent,SCU中实现了浅比较（class组件）
+   - memo，函数组件中的PureComponent（函数组件）
+   ```
+   function MyComponent(props) {
+     /*使用props渲染*/
+   }
+   function areEqual(prevProps, nextProps) {
+     /*
+       如果把 nextProps 传入 render 方法的返回结果与将prevProps传入
+       render方法的返回结果一致则返回 true,否则返回false
+     */
+   }
+   export default React.memo(MyComponent, areEqual)
+   ```
+   - 浅比较已使用大部分情况（尽量不要做深度比较）
+ - 不可变值immutable.js
+   - 彻底拥抱”不可变值“
+   - 基于共享数据（不是深拷贝），速度好
 * 高阶组件HOC
+  ```
+  //高阶组件不是一种功能，而是一种模式,类似工厂模式
+  const HOCFactory = (Component) => {
+    class HOC extends React.Component {
+      //在此定义多个组件的公共逻辑
+      render() {
+        return <Component {...this.props}/> //返回拼装的结果
+      }
+    }
+    return HOC
+  }
+  const EnhancedComponent1 = HOCFactory(WrappedComponent1)
+  const EnhancedComponent2 = HOCFactory(WrappedComponent2)
+  ```
 * Render Props
