@@ -105,3 +105,53 @@ this.setState((prevState, props) => {
 [![](https://image.prntscr.com/image/weCxqslTQtWX6tNugFGcFQ.png)](https://image.prntscr.com/image/weCxqslTQtWX6tNugFGcFQ.png "markdown")
 
 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+##### React高级特性
+* 函数组件
+1. 纯函数，输入props,输出JSX
+2. 没有实例，没有生命周期，没有state
+3. 不能扩展其他方法
+* 非受控组件
+- ref
+- defaultValue defaultChecked
+- 手动操作DOM元素
+- 使用场景
+  - 必须手动操作DOM元素，setState实现不了
+  - 文件上传<input type=file>
+  - 某些富文本编辑器，需要传入DOM元素
+###### 受控组件vs非受控组件
+- 优先使用受控组件，符合React设计原则
+- 必须操作DOM时，再使用非受控组件
+* Portals
+- 组件默认会按照既定层次嵌套渲染
+- 如何让组件渲染到父组件以外
+- 使用场景
+  - overflow: hidden
+  - 父组件z-index值太小
+  - fixed需要放在body第一层级
+* context
+- 公共信息（语言、主题）如何传递给每个组件
+- 用props太繁琐
+- 用redux小题大做
+* 异步组件
+- import()
+- React.lazy
+- React.Suspense
+```
+const ContextDemo = React.lazy(() => import('./ContextDemo'));
+
+render(){
+  return (
+    <div>
+      <p>引入一个动态组件</p>
+      <hr />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <ContextDemo />
+      </React.Suspense>
+    </div>
+  )
+}
+```
+* 性能优化
+* 高阶组件HOC
+* Render Props
