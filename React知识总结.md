@@ -204,3 +204,26 @@ render(){
   const EnhancedComponent2 = HOCFactory(WrappedComponent2)
   ```
 * Render Props
+```
+//Render Props的核心思想
+//通过一个函数将class组件的state作为props传递给纯函数组件
+class Factory extends React.Component {
+  constructor() {
+    this.state = {
+      /* state 即多个组件的公共逻辑的数据*/
+    }
+  }
+  /* 修改 state */
+  render() {
+    return <div>{this.props.render(this.state)}</div>
+  }
+} 
+```
+```
+const App = () => (
+  <Factory render={
+    /* render 是一个函数组件*/
+    (props) => <p>{props.a} {props.b}....</p>
+  } />
+)
+```
