@@ -37,3 +37,4 @@ export const addTodoAsync = text => {
 }
 ```
 ##### redux中间件
+[![](https://image.prntscr.com/image/FO0T4rZGTIK_YYTxmOQaCg.png)](https://image.prntscr.com/image/FO0T4rZGTIK_YYTxmOQaCg.png "markdown")
