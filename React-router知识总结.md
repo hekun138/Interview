@@ -1,7 +1,7 @@
 ##### React-router使用
 - 路由模式（hash、H5 history）,同vue-router
   - hash模式（默认），如http://abc.com/#/user/10
-  ```
+  ```javascript
   import React from 'react'
   import {
     HashRouter as Router,
@@ -10,7 +10,7 @@
   } from 'react-router-dom'
   ```
   - H5 history模式，如http://abc.com/user/20
-  ```
+  ```javascript
   import React from 'react'
   import {
     BrowserRouter as Router,
@@ -19,7 +19,7 @@
   } from 'react-router-dom'
   ```
   - 后者需要server端支持，因此无特殊需求可选择前者
-  ```
+  ```javascript
   function RouterComponent() {
     return (
       <Router>
@@ -39,7 +39,7 @@
   }
   ```
 - 路由配置（动态路由、懒加载）,同vue-router
-```
+```javascript
 import {BrowserRouter as Router, Route, Swtch} from 'react-router-dom'
 import React, { Suspense, lazy } from 'react'
 
