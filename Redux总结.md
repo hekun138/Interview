@@ -61,4 +61,4 @@ store.dispatch = function dispatchAndLog(action) {
 }
 ```
 - redux数据流程图
-[![](https://image.prntscr.com/image/wEf1UywARHiF1U7TbQ_P1g.png)](https://image.prntscr.com/image/wEf1UywARHiF1U7TbQ_P1g.png "markdown")
+[![](https://image.prntscr.com/image/QAe5HTD7T26YNyOHzKRFyQ.png)](https://image.prntscr.com/image/QAe5HTD7T26YNyOHzKRFyQ.png "markdown")
