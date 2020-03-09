@@ -38,3 +38,27 @@ export const addTodoAsync = text => {
 ```
 ##### redux中间件
 [![](https://image.prntscr.com/image/FO0T4rZGTIK_YYTxmOQaCg.png)](https://image.prntscr.com/image/FO0T4rZGTIK_YYTxmOQaCg.png "markdown")
+
+```
+import { applyMiddleware, createStore } from 'redux';
+import createLogger from 'redux-logger';
+import thunk from 'redux-thunk';
+const logger = createLogger();
+
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk, logger) //会被顺序执行
+)
+```
+- logger实现
+```
+//自己修改dispatch, 增加logger
+let next = store.dispatch;
+store.dispatch = function dispatchAndLog(action) {
+  console.log('dispatching', action);
+  next(action);
+  console.log('next state', store.getState());
+}
+```
+- redux数据流程图
+[![](https://image.prntscr.com/image/wEf1UywARHiF1U7TbQ_P1g.png)](https://image.prntscr.com/image/wEf1UywARHiF1U7TbQ_P1g.png "markdown")
