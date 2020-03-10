@@ -102,6 +102,14 @@
     - batchUpdate机制
       [![](https://image.prntscr.com/image/Lsaq4J0tT1yBNqbo6TCyEw.png)](https://image.prntscr.com/image/Lsaq4J0tT1yBNqbo6TCyEw.png "markdown")
       [![](https://image.prntscr.com/image/9Cw861haTt2iaMt7fIaVcA.png)](https://image.prntscr.com/image/9Cw861haTt2iaMt7fIaVcA.png "markdown")
-    - transaction（事务）机制
+      - 哪些能命中batchUpdate机制
+        1. 生命周期（和它调用的函数）
+        2. React中注册的事件（和它调用的函数）
+        3. React可以“管理”的入口
+      - 哪些不能命中batchUpdate机制
+        1. setTimeout setInterval等（和它调用的函数）
+        2. 自定义的DOM事件（和它调用的函数）
+        3. React“管不到”的入口
+    - transaction（事务）机制 
 - 组件渲染过程
 - 前端路由
