@@ -84,7 +84,19 @@
   - event不是原生的，是SyntheticEvent合成事件对象
   - 和Vue事件不同，和DOM事件也不同
   [![](https://image.prntscr.com/image/-sxjckNhQE2lq-gzi2iO9w.png)](https://image.prntscr.com/image/-sxjckNhQE2lq-gzi2iO9w.png "markdown")
-
+  - 为何要合成事件机制？
+    - 更好的兼容性和跨平台（自己实现一套逻辑更能保证兼容性和跨平台React Native）
+    - 挂载到document，减少内存消耗，避免频繁解绑
+    - 方便事件的统一管理（如事务机制）
 - setState batchUpdate
+  - 有时异步（普通使用），有时同步（setTimeout、DOM事件）
+  - 有时合并（对象形式），有时不合并（函数形式）
+  - 后者比较好理解（像Object.assign）,主要讲解前者
+  
+  - 核心要点 
+    - setState主流程
+      [![](https://image.prntscr.com/image/_PDWekLzRwyUsLvc9RliKw.png)](https://image.prntscr.com/image/_PDWekLzRwyUsLvc9RliKw.png "markdown")
+    - batchUpdate机制
+    - transaction（事务）机制
 - 组件渲染过程
 - 前端路由
