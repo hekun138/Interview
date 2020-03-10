@@ -83,7 +83,8 @@
   - 所有事件挂载到document上
   - event不是原生的，是SyntheticEvent合成事件对象
   - 和Vue事件不同，和DOM事件也不同
-  https://image.prntscr.com/image/-sxjckNhQE2lq-gzi2iO9w.png
+  [![](https://image.prntscr.com/image/-sxjckNhQE2lq-gzi2iO9w.png)](https://image.prntscr.com/image/-sxjckNhQE2lq-gzi2iO9w.png "markdown")
+
 - setState batchUpdate
 - 组件渲染过程
 - 前端路由
