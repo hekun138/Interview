@@ -80,6 +80,10 @@
   - 第一个参数，可能是组件，也可能是html tag
   - 组件名，首字母必须要大写（React规定） 
 - 合成事件
+  - 所有事件挂载到document上
+  - event不是原生的，是SyntheticEvent合成事件对象
+  - 和Vue事件不同，和DOM事件也不同
+  https://image.prntscr.com/image/-sxjckNhQE2lq-gzi2iO9w.png
 - setState batchUpdate
 - 组件渲染过程
 - 前端路由
