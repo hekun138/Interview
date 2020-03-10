@@ -6,7 +6,7 @@
 - vdom和diff
   - h函数
   - vnode数据结构
-  ```json
+  ```javascript
    {
       tag: 'div',
       props: {
