@@ -96,6 +96,9 @@
   - 核心要点 
     - setState主流程
       [![](https://image.prntscr.com/image/_PDWekLzRwyUsLvc9RliKw.png)](https://image.prntscr.com/image/_PDWekLzRwyUsLvc9RliKw.png "markdown")
+      [![](https://image.prntscr.com/image/Lsaq4J0tT1yBNqbo6TCyEw.png)](https://image.prntscr.com/image/Lsaq4J0tT1yBNqbo6TCyEw.png "markdown")
+      [![](https://image.prntscr.com/image/9Cw861haTt2iaMt7fIaVcA.png)](https://image.prntscr.com/image/9Cw861haTt2iaMt7fIaVcA.png "markdown")
+      
     - batchUpdate机制
     - transaction（事务）机制
 - 组件渲染过程
