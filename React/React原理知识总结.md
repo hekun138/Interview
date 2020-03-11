@@ -112,4 +112,18 @@
         3. React“管不到”的入口
     - transaction（事务）机制 
 - 组件渲染过程
+  - JSX如何渲染为页面 
+  - setState之后如何更新页面
+    - 更新的两个阶段
+      1. 上述的patch被拆分为两个阶段
+      2. reconciliation阶段-执行diff算法，纯JS计算
+      3. commit阶段 - 将diff结果渲染DOM
+    - 可能会有性能问题
+      1. JS是单线程，且和DOM渲染共用一个线程
+      2. 当组件足够复杂，组件更新时计算和渲染都压力大
+      3. 同时再有DOM操作需求（动画、鼠标拖拽等），将卡顿 
+    - 解决方案 fiber
+      1. 将reconciliation阶段进行任务拆分（commit无法拆分）
+      2. DOM需要渲染时暂停，空闲时恢复
+      3. window.requestIdleCallback
 - 前端路由
